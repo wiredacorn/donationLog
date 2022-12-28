@@ -29,4 +29,9 @@ This repo is based off of the Django tutorial. It basically follows the same str
     3. Go to ```http://127.0.0.1:8000/admin``` to view the admin area. Login using ```dev``` and ```password```.
 
 
-## Installation
+## Usage
+
+Just learning stuff at this point, but here's what I got so far:
+
+1. Main project lives in the root ```donationLog``` foler.
+2. Project consists of multiple 'apps' which are in the subfolders. For example the ```polls``` which I set up in the tutorial.
