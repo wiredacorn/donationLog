@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div>
+        <h1 class="text-4xl">{{ question.question_text }}</h1>
+        <div class="w-full border border-white mt-4 mb-8"></div>
+    </div>
+
+    <ul class="mb-4 pb-4 border-b border-b-white flex flex-wrap flex-col">
+    {% for choice in question.choice_set.all %}
+        <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+    {% endfor %}
+    </ul>
+
+    <a class="hover:text-black hover:bg-white py-2 px-4 mr-4 border border-white" href="{% url 'polls:detail' question.id %}">Vote again?</a> 
+{% endblock %}

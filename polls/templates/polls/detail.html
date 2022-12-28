@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{ question.question_text }}
+{% endblock %}
+
+{% block content %}
+    <div>
+        <h1 class="text-4xl">{{ question.question_text }}</h1>
+        <div class="w-full border border-white mt-4 mb-8"></div>
+    </div>
+
+    <form action="{% url 'polls:vote' question.id %}" method="post">
+        {% csrf_token %}
+        <fieldset class="mb-4 pb-4 border-b border-b-white flex flex-wrap">
+            <h3 class="text-xl min-w-full mb-9">Choices:</h3>
+            {% if question.choice_set.all %}
+                {% for choice in question.choice_set.all %}
+                    <input class="absolute peer/{{ forloop.counter }} appearance-none" type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+                    <label class="bg-gray-700 peer-checked/{{ forloop.counter }}:bg-white peer-checked/{{ forloop.counter }}:text-black py-2 px-4 mr-4 border border-white" for="choice{{ forloop.counter }}">
+                        {{ choice.choice_text }}
+                    </label><br>
+                {% endfor %}
+            {% else %}
+                    Brah, you gotta pick one.
+            {% endif %}
+        </fieldset>
+        <input class="hover:text-black hover:bg-white py-2 px-4 mr-4 border border-white" type="submit" value="Yebo!">
+        {% if error_message %}
+            <div class="block pt-4">{{ error_message }}</div>
+        {% endif %}
+    </form>
+    <style>
+        input[type="radio"] {
+            appearance: none;
+            background-color: transparent;
+            margin: 0;
+            font: inherit;
+            color: currentColor;
+            width: 1.15em;
+            height: 1.15em;
+            border: 0.15em solid currentColor;
+            border-radius: 50%;
+            opacity:0;
+            pointer-events: none;
+        }
+    </style>
+    
+{% endblock %}
+

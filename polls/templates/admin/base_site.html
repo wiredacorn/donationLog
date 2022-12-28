@@ -1,0 +1,9 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{% if subtitle %}{{ subtitle }} | {% endif %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+<script src="https://cdn.tailwindcss.com"></script>
+{% block branding %}
+<h1 class="underline" id="site-name"><a href="{% url 'admin:index' %}">Donation Log</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

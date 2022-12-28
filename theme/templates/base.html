@@ -1,0 +1,115 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}My amazing site{% endblock %}</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="https://cdn.tailwindcss.com"></script>
+	{% tailwind_css %}
+</head>
+
+<body class="bg-gray-900">
+	<div class="flex h-screen">
+		<!-- Sidebar -->
+		<div class="bg-gray-800 flex flex-col"  id="sidebar">
+
+			<div class="p-8 mr-8">
+				<a href="/">
+					<div class="aspect-square w-full flex flex-col justify-end block border border-white bg-white opacity-90 hover:opacity-100">
+						<span class="mt-atuo font-bold text-4xl pt-4 pr-4 pb-2 pl-2 block">
+							LOGO
+						</span>
+					</div>
+				</a>
+			</div>
+			
+
+			<div class="h-full text-white flex flex-col">
+				{% block sidebar %}{% endblock %}
+			</div>
+
+			<!-- Footer -->
+			<div class="p-8">
+				<div class="flex flex-row text-white">
+					<a 
+						href="#"
+						class="min-w-max text-lg px-4 py-2 font-normal tracking-wide bg-transparent border border-white text-white hover:bg-white hover:text-black roundeda-lg shadow-sm  flex-grow opacity-90 hover:opacity-100"
+					>
+						Does nothing
+					</a>
+
+					<a 
+						href="#"
+						class="hidden ml-4 text-lg px-4 py-2 font-semibold  bg-sky-500/50 text-white rounded-r-lg shadow-sm  opacity-90 hover:opacity-100"
+					>
+						+
+					</a>
+				</div>
+			</div>
+			
+
+			<div class="px-8 py-4 opacity-90 bg-black flex ">
+				<span
+					data-text="Lekker bru"
+					class="tooltip"
+				>
+					<img class="h-4 mr-4" src="{% static 'flag-sa.png' %}" />
+				</span>
+				<span
+					data-text="Bet"
+					class="tooltip"
+				>
+					<img class="h-4 mr-4" src="{% static 'flag-usa.png' %}" />
+				</span>
+			</div>
+			<style>
+				.tooltip {
+					position:relative;
+				}
+				.tooltip:before {
+					content: attr(data-text); /* here's the magic */
+					position:absolute;
+					
+					/* vertically center */
+					left:100%;
+					transform:translateX(-50%);
+					
+					/* move to right */
+					bottom:calc(100% + 20px);
+					margin-left:100%; /* and add a small left margin */
+					
+					/* basic styles */
+					width:200px;
+					padding:10px;
+					border-radius:10px;
+					background:#fff;
+					color: #000;
+					text-align:center;
+					z-index:100;
+
+					display:none; /* hide by default */
+				}
+				.tooltip:hover:before {
+					display:block;
+				}
+			</style>
+		</div>
+
+
+		<!-- Content area -->
+
+		<div></div>
+
+		<div class="p-16 w-full text-white" id="content">
+			<div>
+				{% block content %}{% endblock %}
+			</div>
+		</div>
+
+		
+	</div>
+    
+</body>
+</html>
