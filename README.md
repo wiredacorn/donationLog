@@ -33,7 +33,24 @@ This repo is based off of the Django [quick setup](https://docs.djangoproject.co
 
 Just learning stuff at this point, but here's what I got so far:
 
-1. Main project lives in the root ```donationLog``` foler.
+1. Main project lives in the root ```donationLog``` folder.
 2. Project consists of multiple 'apps' which are in the subfolders. For example the ```polls``` which I set up in the tutorial.
-3. 
-Page templates live in each 'app' folder. The naming convsomewhat important to django.
+3. ```settings.py``` in the root folder lists all apps which will be used. A bunch of other variables and configurations. Set the admin page template etc.
+4. Each app sets up a ```models.py``` file which determines what types of data it will need to store in the database.
+5. Each app has a ```urls.py``` file which determines what pages and api endpoints will be available in the app. URLs can be dynamic. Each entry will specify what actions will be taken when the user hits that endpoint. Commonly, you will specify a ```view```.
+6. Views are stored in ```views.py``` and will specify the html template and maybe do some data processing or other intermediate steps.
+7. The html templates are stored in ```{project}/{app}/templates/{app}/template.html``` for example: ```donationLog/polls/templates/polls/results.html```. The folder structure is needed to allow Django to read the templates.
+8. Templates use a template language which allows for accessing data that is passed into the context. We are getting the question number from the url ```localhost/{id}``` for example and passing that to the html template. The below snippet shows how we can access the questions using the ```latest_question_list``` which is passed into the template by ```IndexView``` in ```views.py```.
+
+```
+{% for question in latest_question_list %}
+    <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+{% endfor %}
+```
+
+9. In the ```results.html``` template, the ```Question``` is passed in and is accessed like so:
+```
+{% for choice in question.choice_set.all %}
+    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+{% endfor %}
+```
