@@ -5,7 +5,8 @@ This repo is based off of the Django [quick setup](https://docs.djangoproject.co
 ## Prereqs
 
 1. Python ( I'm using 3.9.6)
-2. Time
+2. Git
+3. Time
 
 ## Installation
 
