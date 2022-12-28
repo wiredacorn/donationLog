@@ -1,5 +1,3 @@
-![alt text](https://github.com/wiredacorn/donationLog/blob/main/static/flag-sa.png?raw=true)
-
 # Food Donation Log
 
 This repo is based off of the Django [quick setup](https://docs.djangoproject.com/en/4.1/intro/install/) and [tutorial](https://docs.djangoproject.com/en/4.1/intro/tutorial01/). It basically follows the same structure with a few styling changes.
