@@ -4,10 +4,10 @@ This repo is based off of the Django tutorial. It basically follows the same str
 
 ## Prereqs
 
-1. Python ( I'm using )
+1. Python ( I'm using 3.9.6)
 2. Time
 
-## Instalation
+## Installation
 
 1. Navigate to your local directory in terminal.
     1. For example: ```cd ~/Projects/donationLog```
