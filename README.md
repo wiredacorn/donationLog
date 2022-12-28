@@ -19,4 +19,11 @@ This repo is based off of the Django tutorial. It basically follows the same str
     2. Use venv to establish a virtual environment.```python3 -m venv .env```
     3. Activate the virtual environemnt in your terminal session. ```source .env/bin/activate```. This virtual environment is now active for the current terminal session. You will have to do this every time you open a new terminal session for this project.
     4. To confirm that the virtual environment is active, use ```which python``` which should display a path to your project foler. If the virtual environment is not active ```which python3``` will display the systems global python instance at ```/user/bin/python3```.
-3. 
+3. Install Django
+    1. Once venv is active, use ```python -m pip install Django``` to install.
+    2. Open ```python``` to test if Django is installed.
+    3. In the python terminal, enter ```import django```, then ```print(django.get_version())``` which should print the installed version.
+4. Start the application
+    1. Enter ```python manage.py runserver``` to start the local server.
+    2. Go to ```http://127.0.0.1:8000/``` in the browser to view the website.
+    3. Go to ```http://127.0.0.1:8000/admin``` to view the admin area.
