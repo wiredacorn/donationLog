@@ -1,3 +1,5 @@
+![alt text](https://github.com/wiredacorn/donationLog/blob/main/static/flag-sa.png?raw=true)
+
 # Food Donation Log
 
 This repo is based off of the Django [quick setup](https://docs.djangoproject.com/en/4.1/intro/install/) and [tutorial](https://docs.djangoproject.com/en/4.1/intro/tutorial01/). It basically follows the same structure with a few styling changes.
@@ -35,4 +37,5 @@ Just learning stuff at this point, but here's what I got so far:
 
 1. Main project lives in the root ```donationLog``` foler.
 2. Project consists of multiple 'apps' which are in the subfolders. For example the ```polls``` which I set up in the tutorial.
-3. Page templates live in each 'app' folder. The naming convsomewhat important to django.
+3. 
+Page templates live in each 'app' folder. The naming convsomewhat important to django.
