@@ -1,4 +1,4 @@
-# Domantion Log
+# Food Donation Log
 
 This repo is based off of the Django tutorial. It basically follows the same structure with a few styling changes.
 
