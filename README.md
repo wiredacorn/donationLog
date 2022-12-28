@@ -16,9 +16,9 @@ This repo is based off of the Django [quick setup](https://docs.djangoproject.co
     2. The command will look something like this ```git clone git@github.com:wiredacorn/donationLog.git .``` <br>(The dot at the end instructs git to clone to the current folder.)
 2. Install venv
     1. Use python to install venv. ```python3 -m pip install --user virtualenv```
-    2. Use venv to establish a virtual environment.```python3 -m venv .env```
+    2. Use venv to establish a virtual environment. ```python3 -m venv .env```
     3. Activate the virtual environemnt in your terminal session. ```source .env/bin/activate```. <br>This virtual environment is now active for the current terminal session. You will have to do this every time you open a new terminal session for this project.
-    4. To confirm that the virtual environment is active, use ```which python``` which should display a path to your project foler. <br>If the virtual environment is not active ```which python3``` will display the systems global python instance at ```/user/bin/python3```.
+    4. To confirm that the virtual environment is active, use ```which python``` which should display a path to your project folder. <br>If the virtual environment is not active ```which python3``` will display the systems global python instance at ```/user/bin/python3```.
 3. Install Django
     1. Once venv is active, use ```python -m pip install Django``` to install.
     2. Open ```python``` to test if Django is installed.
@@ -35,3 +35,4 @@ Just learning stuff at this point, but here's what I got so far:
 
 1. Main project lives in the root ```donationLog``` foler.
 2. Project consists of multiple 'apps' which are in the subfolders. For example the ```polls``` which I set up in the tutorial.
+3. Page templates live in each 'app' folder. The naming convsomewhat important to django.
